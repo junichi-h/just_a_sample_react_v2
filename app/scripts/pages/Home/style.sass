@@ -1,0 +1,18 @@
+@import '../../../styles/_mixin'
+@import '../../../styles/_animation'
+.wrapper
+  width: 100vw
+  height: 100vh
+  position: absolute 0 0
+  background:
+    color: #00d2ff
+
+.title
+  +font-size(20)
+  color: #3f3f3f
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate3d(-50%, -50%, 0)
+
++fade()
