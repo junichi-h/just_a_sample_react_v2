@@ -13,7 +13,7 @@ Using below:
 
 - [Redux](https://redux.js.org/)
 
-- [React-First-Router](https://github.com/faceyspacey/redux-first-router)
+- [Redux-First-Router](https://github.com/faceyspacey/redux-first-router)
 
 - [loadable-components](https://github.com/smooth-code/loadable-components)
 
