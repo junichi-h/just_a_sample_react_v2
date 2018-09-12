@@ -19,10 +19,7 @@ console.log(
     )}`
   )
 );
-
-// console.log(process.env);
 console.log(`isProd : ${isProd}`);
-
 const postCSSLoaderOptions = {
   indent: 'postcss',
   sourceMap: isProd ? false : 'inline',
@@ -36,9 +33,11 @@ const postCSSLoaderOptions = {
       {browsers: ['last 2 versions', 'ie 9', 'ios 7', 'android 4.1'], grid: true}
     ),
     csswring()
-  ],
+  ]
 };
 
+// localIdentName: '[name]-[local]-[hash:base64:5]'
+const localIdentName = isProd ? '[hash:base64:5]' : '[name]-[local]-[hash:base64:5]';
 
 export default {
   mode: MODE,
@@ -98,7 +97,7 @@ export default {
               modules: true,
               sourceMap: !isProd,
               importLoaders: 2,
-              localIdentName: '[name]-[local]-[hash:base64:5]'
+              localIdentName
             }
           },
           {

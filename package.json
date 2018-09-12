@@ -135,7 +135,7 @@
     "start": "concurrently --kill-others --raw \"yarn run dev\"",
     "dev": "cross-env NODE_ENV=development nodemon --require @babel/register server.js --watch server.js --port 9000",
     "preprod": "rimraf ./dist",
-    "prod": "NODE_ENV=prod gulp pug:prod && gulp js:prod && gulp build",
+    "prod": "gulp pug:prod && cross-env NODE_ENV=prod gulp js:prod && gulp build",
     "server": "browser-sync start -s 'dist'"
   },
   "devDependencies": {

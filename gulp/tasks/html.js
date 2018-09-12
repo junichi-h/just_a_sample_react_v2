@@ -21,33 +21,30 @@ gulp.task('pug:web', () => {
   gulp.src([
     'app/**/!(_)*.pug'
   ])
-      .pipe($.plumber())
-      .pipe(changed(config.app, {
-        extension: '.html'
-      }))
-      .pipe($.pug({
-        pretty: true,
-        cache: true
-      }))
-      .pipe($.debug({title: 'pug:web Compiled:'}))
-      .pipe(gulp.dest(config.tmp))
-      .pipe(reload({stream: true}));
+  .pipe($.plumber())
+  .pipe(changed(config.app, {
+    extension: '.html'
+  }))
+  .pipe($.pug({
+    pretty: true,
+    cache: true
+  }))
+  .pipe($.debug({ title: 'pug:web Compiled:' }))
+  .pipe(gulp.dest(config.tmp))
+  .pipe(reload({ stream: true }));
 });
 
 gulp.task('pug:prod', () => {
   gulp.src(`${config.app}/**/!(_)*.pug`)
-      .pipe($.plumber())
-      /*.pipe(changed('app', {
-        extension: '.html'
-      }))*/
-      .pipe(cached('pug'))
-      .pipe($.pug({
-        pretty: true,
-        cache: false,
-        basedir: `${config.app}/`
-      }))
-      .pipe($.debug({title: 'pug Compiled:'}))
-      .pipe(gulp.dest(`${config.dist}/`))
+    .pipe($.plumber())
+    .pipe(cached('pug'))
+    .pipe($.pug({
+      pretty: true,
+      cache: false,
+      basedir: `${config.app}/`
+    }))
+    .pipe($.debug({title: 'pug Compiled:'}))
+    .pipe(gulp.dest(`${config.dist}/`))
 });
 
 // ※ gulp js, pugを先に実行しておくこと

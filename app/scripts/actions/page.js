@@ -1,4 +1,4 @@
-import { NOT_FOUND } from 'redux-first-router'
+import { NOT_FOUND } from 'redux-first-router';
 
 export const HOME = '@@page/HOME';
 export const LOGIN = '@@page/LOGIN';
